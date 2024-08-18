@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .registration-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .registration-container h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .registration-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .registration-container input[type="text"],
+        .registration-container input[type="email"],
+        .registration-container input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .registration-container button {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .registration-container button:hover {
+            background-color: #2980b9;
+        }
+        .registration-container .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .registration-container .login-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Регистрация</h2>
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            {{users}}
+<!--            <input type="text" name="username" placeholder="Имя пользователя" required>-->
+<!--            <input type="password" name="password1" placeholder="Пароль" required>-->
+<!--            <input type="password" name="password2" placeholder="Подтвердите пароль" required>-->
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <div class="login-link">
+            Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
+        </div>
+    </div>
+</body>
+</html>

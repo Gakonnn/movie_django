@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильм Комедия 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            color: #333;
+        }
+        .movie-details {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .movie-details h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .movie-details p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .movie-details strong {
+            color: #34495e;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498db;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="movie-details">
+        <h2>{{ movie.name }}</h2>
+        <p><strong>Год:</strong> {{ movie.year }}</p>
+        <p><strong>Длительность:</strong> {{ movie.during }}</p>
+        <p><strong>Оценка:</strong> {{ movie.grade }}</p>
+        <p><strong>Описание:</strong> {{ movie.description }}</p>
+    </div>
+    <a href="\" class="back-link">Назад к списку фильмов</a>
+</body>
+</html>
